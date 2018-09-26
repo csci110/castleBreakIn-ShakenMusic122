@@ -25,7 +25,7 @@ class Princess extends Sprite {
         this.width = 48;
         this.x = game.displayWidth / 2 - this.width / 2;
         this.y = game.displayHeight - this.height;
-        this.speedWhenWalking = 150;
+        this.speedWhenWalking = 100 + this.height * 4 - this.width - 122;
         this.lives = 3;
         this.accelerateOnBounce = false;
         this.defineAnimation("left", 9, 11);
@@ -146,7 +146,7 @@ class Block extends Sprite {
 
 Block.blocksToDestroy = 0;
 
-for (let i = 0; i < 5; i = i + 1) {
+for (let i = 0; i < 10; i = i + 1) {
     new Block(200 + i * 48, 200);
 }
 
