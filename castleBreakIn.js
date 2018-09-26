@@ -112,7 +112,7 @@ class Ball extends Sprite {
     handleBoundaryContact() {
         game.removeSprite(this);
         Ball.ballsInPlay = Ball.ballsInPlay - 1;
-        if (Ball.ballsInPlay <= 0) {
+        if (Ball.ballsInPlay === 0) {
             ann.LoseALife();
         }
     }
