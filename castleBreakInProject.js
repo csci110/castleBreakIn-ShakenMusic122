@@ -164,7 +164,7 @@ class ExtraLifeBlock extends Block {
     }
 } 
 
-new ExtraLifeBlock(200, 250);
+new ExtraLifeBlock(200, 350);
 
 class ExtraBallBlock extends Block {
     constructor(x, y) {
@@ -181,3 +181,28 @@ class ExtraBallBlock extends Block {
 } 
 
 new ExtraBallBlock(300, 250);
+new ExtraBallBlock(600, 300);
+new ExtraBallBlock(200, 400);
+new ExtraBallBlock(650, 500);
+
+class DecreaseSpeedBlock extends Block {
+    constructor(x, y) {
+        super();
+        this.x = x;
+        this.y = y;
+        this.setImage("block2.png");
+    }
+    handleCollision() {
+        super.handleCollision();
+        if (ann.speedWhenWalking > 100) {
+            ann.speedWhenWalking = ann.speedWhenWalking - 10;
+        }
+        if (ann.speedWhenWalking <= 100) {
+            ann.speedWhenWalking = ann.speedWhenWalking;
+        }
+    }
+}
+
+new DecreaseSpeedBlock(100, 250);
+new DecreaseSpeedBlock(600, 250);
+new DecreaseSpeedBlock(500, 450);
