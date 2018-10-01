@@ -206,3 +206,24 @@ class DecreaseSpeedBlock extends Block {
 new DecreaseSpeedBlock(100, 250);
 new DecreaseSpeedBlock(600, 250);
 new DecreaseSpeedBlock(500, 450);
+
+class IncreaseSpeedBlock extends Block {
+    constructor(x, y) {
+        super();
+        this.x = x;
+        this.y = y;
+        this.setImage("block3.png");
+    }
+    handleCollision() {
+        super.handleCollision();
+        if (ann.speedWhenWalking > 100) {
+            ann.speedWhenWalking = ann.speedWhenWalking + 20;
+        }
+        if (ann.speedWhenWalking <= 100) {
+            ann.speedWhenWalking = ann.speedWhenWalking;
+        }
+    }
+}
+
+new IncreaseSpeedBlock(200, 450);
+new IncreaseSpeedBlock(600, 350);
